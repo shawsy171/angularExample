@@ -1,0 +1,41 @@
+<!--
+	this is a github viewer 
+-->
+<!DOCTYPE html>
+<html lang="en" ng-app = "MainModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Github Viewer</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.js"></script>
+
+	<style type="text/css">
+		.red {
+			color: red;
+		}
+	</style>
+</head>
+<body ng-controller="MainController">
+	
+	<h1>{{message}}</h1>
+	<ul>
+		<li><a href="routingExample/index.html">routingExample</a></li>
+	</ul>
+	<span class="red">{{error}}</span>
+	<p>This is written by {{person.firstName}} {{person.secondName}} in Angular</p>
+	
+	<!-- {{username}} this show the two way data binding as you type -->
+	{{ countdown }}
+	<form name="searchUser" ng-submit="search(username)"> <!-- the username parameter is not need because username is in $scope -->
+		
+		<input type="search" required place="Username to find ..." ng-model="username">
+		<input type="submit" value="Search" > 
+	</form>
+	
+	<div ng-include="'userdetails.html'" ng-show="user"></div>
+
+	
+	<script type="text/javascript" src="js/angularExample.js"></script>
+	<script type="text/javascript" src="js/github.js"></script> <!-- this is custom service -->
+</body>
+</html>

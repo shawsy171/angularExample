@@ -1,0 +1,42 @@
+<a href="#/main">Back to search</a>
+
+<div>
+	<h3>Name: {{user.name}}</h3>
+	<p>Location: {{user.location}}</p>
+	<p>Followers: {{user.followers}}</p>
+	<p>Public repos: {{user.public_repos}}</p>
+	<img src="{{user.avatar_url}}">
+	{{ error }}
+	<div>
+		Order:
+		<!-- the value will be placed into repoSortOrder -->
+		<select ng-model="repoSortOrder" ng-show="user">
+			<option value="+name">Name</option>
+			<option value="-stargazers_count">Stars</option>
+			<option value="+language">Language</option>
+		</select>
+	</div>
+	
+</div>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Stars</th>
+			<th>Language</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- orderBy this is a filter -->
+		<tr ng-repeat="repo in repos | orderBy: repoSortOrder">
+			<td>
+				<a href="#/repo/{{user.login}}/{{repo.name}}">{{repo.name}}</a>
+			</td>
+			<td>{{repo.stargazers_count | number}}</td>
+			<td>{{repo.language}}</td>
+		</tr>
+	</tbody>
+
+</table>
