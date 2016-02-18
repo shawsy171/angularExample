@@ -1,21 +1,11 @@
 <div>
 	
-	<!-- <h1>{{message}}</h1> -->
-	<ul>
-		<li><a href="../index.html">back too main Example</a></li>
-	</ul>
-	
-	<!-- <span class="red">{{error}}</span> -->
 	<p>This is written by {{person.firstName}} {{person.secondName}} in Angular</p>
 	
-	<!-- {{username}} this show the two way data binding as you type -->
-	{{ countdown }}
-	<form name="searchUser" ng-submit="search(username)"> <!-- the username parameter is not need because username is in $scope -->
+	<form name="searchUser" ng-submit="search()"> 
 		
 		<input type="search" required place="Username to find ..." ng-model="username">
 		<input type="submit" value="Search" > 
 	</form>
 	
-	<!-- <div ng-include="'../userdetails.html'" ng-show="user"></div> -->
-
 </div>

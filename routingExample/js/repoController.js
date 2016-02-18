@@ -1,6 +1,6 @@
 (function (){
 
-	var module = angular.module("MainModule");
+	var app = angular.module("MainModule");
 
 	var repoControl = function ($scope, $routeParams, github) {
 
@@ -17,10 +17,7 @@
 
 		github.getRepoDetails(username, reponame)
 			  .then(onRepo, onError);
-
-
-
 	};
 
-	module.controller('repoController', repoControl);
+	app.controller('repoController', repoControl);
 }());

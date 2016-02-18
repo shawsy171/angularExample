@@ -66,7 +66,7 @@ var MainControl = function($scope, $interval, $location){
 
 	$scope.username = "angular";
 	$scope.person = person;
-	$scope.countdown = 5;
+	$scope.countdown = 20;
 	startCountdown();
 };
 
